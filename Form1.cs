@@ -24,7 +24,12 @@ namespace NPD_Deneme
 {
     public partial class Form1 : Form
     {
+        
         int index,sayac;
+        //Fiyatlandırma burada oluyor...
+            //0-2 saat arası 5TL.
+            //2-5 saat arası 15TL.
+            //Süresiz 30TL.
         int Hesap (int dakika)
         {
             int fiyat;
