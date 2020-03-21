@@ -24,14 +24,13 @@ namespace NPD_Deneme
 {
     public partial class Form1 : Form
     {
-        
         int index,sayac;
-        //Fiyatlandırma burada oluyor...
+        int Hesap (int dakika)
+        {
+            //Fiyatlandırma burada oluyor...
             //0-2 saat arası 5TL.
             //2-5 saat arası 15TL.
             //Süresiz 30TL.
-        int Hesap (int dakika)
-        {
             int fiyat;
             if (dakika < 120)
             {
@@ -80,19 +79,28 @@ namespace NPD_Deneme
         //Otoparktan çıkan arabaları listeden çıkartıyoruz.
         private void BtnFiyatgor_Click(object sender, EventArgs e)
         {
+
             index = listAraclar.SelectedIndex;
-            listAraclar.Items.RemoveAt(index);
-            listSure.Items.RemoveAt(index);
-            sayac--;
-            if (sayac == 0)
+            if (index < 0)
             {
-                lblSayac.Text = "-";
+                MessageBox.Show("Plaka Seçilmedi");
             }
             else
             {
-                lblSayac.Text = sayac.ToString();
+
+
+                listAraclar.Items.RemoveAt(index);
+                listSure.Items.RemoveAt(index);
+                sayac--;
+                if (sayac == 0)
+                {
+                    lblSayac.Text = "-";
+                }
+                else
+                {
+                    lblSayac.Text = sayac.ToString();
+                }
             }
-            
 
         }
 
